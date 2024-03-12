@@ -1,5 +1,5 @@
 <?php
-$names = ['mario', 'luigi'];
-$names[] = 'bowser';
-print_r($names);
+$num = 23.234;
+echo floor($num);
+
 ?>
