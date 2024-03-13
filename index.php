@@ -22,6 +22,10 @@ foreach($numbers as $number) {
     }
 }
 
-
+function sayHello($name = 'mario') {
+    echo "hello " . $name . "<br/>";
+}
+sayHello();
+sayHello('peach');
 
 ?>
