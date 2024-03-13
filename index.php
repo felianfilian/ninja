@@ -14,4 +14,14 @@ foreach($names as $name){
     echo $name . "<br/>";
 }
 
+$numbers = [2,3,5,7,8,9];
+
+foreach($numbers as $number) {
+    if($number > 5) {
+        echo $number . "<br/>";
+    }
+}
+
+
+
 ?>
