@@ -10,4 +10,8 @@ echo count($names);
 $names03 = array_merge($names, $names02);
 print_r($names03);
 
+for($i = 0; $i < 5; $i++){
+    echo "ninja <br/>";
+}
+
 ?>
