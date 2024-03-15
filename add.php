@@ -1,8 +1,8 @@
 <?php 
-if(isset($_GET['submit'])) {
-    echo $_GET['mail'] . "<br/>";
-    echo $_GET['title'] . "<br/>";
-    echo $_GET['ingredients'] . "<br/>";
+if(isset($_POST['submit'])) {
+    echo $_POST['mail'] . "<br/>";
+    echo $_POST['title'] . "<br/>";
+    echo $_POST['ingredients'] . "<br/>";
 }
 
 ?>
@@ -18,19 +18,11 @@ if(isset($_GET['submit'])) {
 }
 </style>
 <body class="grey lighten-4">
-    <nav class="white depth-0"> 
-    <div class="container">
-            <a href="#" class="brand-logo brand-text">Ninja Pizza</a>
-            <ul id="nav-mobile" class="right hide-on-small-and-down">
-                <li><a href="#" class="btn brand z-depth-0">Add Pizza</a></li>
-            </ul>
-        </div>
-    
-    </nav>    
+    <?php include('templates/navbar.php');  ?>
 
     <section class="container grey-text">
         <h4 class="center">Add a Pizza</h4>
-        <form class="white" action="add.php" method="GET" style="max-width: 460px">
+        <form class="white" action="add.php" method="POST" style="max-width: 460px">
             <label>Mail</label>
             <input type="text" name="mail" placeholder="mail">
             <label>Title</label>
