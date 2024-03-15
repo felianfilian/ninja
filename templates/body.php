@@ -1,3 +1,5 @@
+
+
 <style>
     form {
   max-width: 460px;
@@ -5,7 +7,7 @@
   padding: 20px;
 }
 </style>
-<body class="grey lighten-4">
+
     <nav class="white depth-0"> 
     <div class="container">
             <a href="./index.php" class="brand-logo brand-text">Ninja Pizza</a>
@@ -15,6 +17,3 @@
         </div>
     
     </nav>    
-
-
-</body>

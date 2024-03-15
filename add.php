@@ -1,3 +1,12 @@
+<?php 
+if(isset($_GET['submit'])) {
+    echo $_GET['mail'] . "<br/>";
+    echo $_GET['title'] . "<br/>";
+    echo $_GET['ingredients'] . "<br/>";
+}
+
+?>
+
 <html>
 <?php include('templates/header.php');  ?>
 
