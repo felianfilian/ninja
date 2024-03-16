@@ -1,6 +1,7 @@
 <?php 
 if(isset($_POST['submit'])) {
-    echo $_POST['mail'] . "<br/>";
+    echo htmlspecialchars($_POST['mail']) . "<br/>";
+
     echo $_POST['title'] . "<br/>";
     echo $_POST['ingredients'] . "<br/>";
 }
