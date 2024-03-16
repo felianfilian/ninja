@@ -1,6 +1,11 @@
 <?php 
 if(isset($_POST['submit'])) {
-    echo htmlspecialchars($_POST['mail']) . "<br/>";
+    if(empty($_POST['mail'])) {
+        echo 'email required';
+    } else {
+        echo htmlspecialchars($_POST['mail']) . "<br/>";
+    }
+    
 
     echo $_POST['title'] . "<br/>";
     echo $_POST['ingredients'] . "<br/>";
