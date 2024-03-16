@@ -4,7 +4,7 @@ $errors = array('mail'=>'','title'=>'','ingredients'=>'');
 
 if(isset($_POST['submit'])) {
     if(empty($_POST['mail'])) {
-        echo 'email required';
+        $errors['mail'] = 'email required';
     } else {
         $email = $_POST['mail'];
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
     }
     
     if(empty($_POST['title'])) {
-        echo 'email required';
+        $errors['title'] =    'title required';
     } else {
         $title = $_POST['title'];
         if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $title)) {
@@ -23,11 +23,11 @@ if(isset($_POST['submit'])) {
     }
 
     if(empty($_POST['ingredients'])) {
-        echo 'email required';
+        $errors['ingredients'] = 'ingredients required';
     } else {
         $ingredients = $_POST['ingredients'];
         if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)) {
-            $errors['ingredients'] =   "enter vaild ingredients";
+            $errors['ingredients'] = "enter vaild ingredients";
         }
     }
 
@@ -55,10 +55,13 @@ if(isset($_POST['submit'])) {
         <form class="white" action="add.php" method="POST" style="max-width: 460px">
             <label>Mail</label>
             <input type="text" name="mail" placeholder="mail">
+            <div class="red-text"><?php echo $errors['mail'] ?></div>
             <label>Title</label>
             <input type="text" name="title" placeholder="title">
+            <div class="red-text"><?php echo $errors['title'] ?></div>
             <label>Ingredients</label>
             <input type="text" name="ingredients" placeholder="ingredients">
+            <div class="red-text"><?php echo $errors['ingredients'] ?></div>
             <div class="center">
                 <input type="submit" name="submit" value="submit" class="btn brand z-depth-0">
             </div>
