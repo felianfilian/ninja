@@ -3,9 +3,21 @@ if(isset($_POST['submit'])) {
     if(empty($_POST['mail'])) {
         echo 'email required';
     } else {
-        echo htmlspecialchars($_POST['mail']) . "<br/>";
+        $email = $_POST['mail'];
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "enter vaild e-mail";
+        }
+        //echo htmlspecialchars($_POST['mail']) . "<br/>";
     }
     
+    if(empty($_POST['title'])) {
+        echo 'email required';
+    } else {
+        $title = $_POST['title'];
+        if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $title)) {
+            echo "enter vaild title";
+        }
+    }
 
     echo $_POST['title'] . "<br/>";
     echo $_POST['ingredients'] . "<br/>";
