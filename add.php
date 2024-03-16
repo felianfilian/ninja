@@ -10,17 +10,17 @@ if(isset($_POST['submit'])) {
         //echo htmlspecialchars($_POST['mail']) . "<br/>";
     }
     
-    if(empty($_POST['title'])) {
+    if(empty($_POST['ingredients'])) {
         echo 'email required';
     } else {
-        $title = $_POST['title'];
-        if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $title)) {
-            echo "enter vaild title";
+        $ingredients = $_POST['ingredients'];
+        if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)) {
+            echo "enter vaild ingredients";
         }
     }
 
-    echo $_POST['title'] . "<br/>";
-    echo $_POST['ingredients'] . "<br/>";
+    //echo $_POST['title'] . "<br/>";
+    //echo $_POST['ingredients'] . "<br/>";
 }
 
 ?>
