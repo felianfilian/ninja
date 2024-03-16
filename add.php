@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+$errors = array('name'=>'','title'=>'','ingredients'=>'');
+
 if(isset($_POST['submit'])) {
     if(empty($_POST['mail'])) {
         echo 'email required';
@@ -10,6 +13,15 @@ if(isset($_POST['submit'])) {
         //echo htmlspecialchars($_POST['mail']) . "<br/>";
     }
     
+    if(empty($_POST['title'])) {
+        echo 'email required';
+    } else {
+        $title = $_POST['title'];
+        if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $title)) {
+            echo "enter vaild title";
+        }
+    }
+
     if(empty($_POST['ingredients'])) {
         echo 'email required';
     } else {
