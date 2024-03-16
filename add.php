@@ -1,6 +1,6 @@
 <?php
 
-$errors = array('name'=>'','title'=>'','ingredients'=>'');
+$errors = array('mail'=>'','title'=>'','ingredients'=>'');
 
 if(isset($_POST['submit'])) {
     if(empty($_POST['mail'])) {
@@ -8,7 +8,7 @@ if(isset($_POST['submit'])) {
     } else {
         $email = $_POST['mail'];
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo "enter vaild e-mail";
+            $errors['mail'] =  "enter vaild e-mail";
         }
         //echo htmlspecialchars($_POST['mail']) . "<br/>";
     }
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])) {
     } else {
         $title = $_POST['title'];
         if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $title)) {
-            echo "enter vaild title";
+            $errors['title'] =   "enter vaild title";
         }
     }
 
@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
     } else {
         $ingredients = $_POST['ingredients'];
         if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)) {
-            echo "enter vaild ingredients";
+            $errors['ingredients'] =   "enter vaild ingredients";
         }
     }
 
