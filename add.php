@@ -74,8 +74,8 @@ if(isset($_POST['submit'])) {
 
     </section>
 
-</body>
+    <?php include('templates/footer.php');  ?>
 
-<?php include('templates/footer.php');  ?>
+</body>
 </html>
 
