@@ -18,6 +18,9 @@ mysqli_free_result($result);
 // close connection
 mysqli_close($conn);
 
+$ingredients = explode(',', $pizzas[0]['ingredients']);
+print_r($ingredients);
+
 
 ?>
 
