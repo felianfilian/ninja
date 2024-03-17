@@ -7,9 +7,6 @@ $ingredients = '';
 $errors = array('mail'=>'','title'=>'','ingredients'=>'');
 
 if(isset($_POST['submit'])) {
-    foreach($_POST as $post) {
-        echo $post . "<br/>";
-    }
 
     if(empty($_POST['mail'])) {
         $errors['mail'] = 'email required';
