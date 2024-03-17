@@ -18,7 +18,6 @@ if(isset($_POST['submit'])) {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['mail'] =  "enter vaild e-mail";
         }
-        //echo htmlspecialchars($_POST['mail']) . "<br/>";
     }
     
     if(empty($_POST['title'])) {
@@ -39,8 +38,9 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    //echo $_POST['title'] . "<br/>";
-    //echo $_POST['ingredients'] . "<br/>";
+    if(!array_filter($errors)) {
+        header('location: index.php');
+    } 
 }
 
 ?>
