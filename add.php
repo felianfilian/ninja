@@ -41,6 +41,14 @@ if(isset($_POST['submit'])) {
         $email = mysql_real_escape_string($conn, $_POST['mail']);
         $title = mysql_real_escape_string($conn, $_POST['title']);
         $ingredients = mysql_real_escape_string($conn, $_POST['ingredients']);
+        // create SQL
+        $sql = "INSERT INTO pizza(title, email, ingredients) VALUES('$title', '$email', '$ingredients')";
+        // save to db
+        if(mysqli_query($conn, $sql)) {
+            // success
+        } else {
+            echo 'query error: ' . mysqli_error($conn);
+        }
         header('location: index.php');
     } 
 }
