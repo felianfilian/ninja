@@ -1,10 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'mario', 'avalon', 'ninja_pizza');
-
-if(!$conn) {
-    echo "connection error";
-}
+include('./config/db_connect.php');
 
 // write query for all
 $sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
@@ -54,6 +50,7 @@ $ingredients = explode(',', $pizzas[0]['ingredients']);
                     </div>
                 </div>
             <?php } ?>
+            <?php  ?>
         </div>
     </div>
     <?php include('templates/footer.php');  ?>
