@@ -1,4 +1,6 @@
 <?php
+// imports
+include('./config/db_connect.php');
 
 $email = '';
 $title = '';
