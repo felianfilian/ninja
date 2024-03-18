@@ -38,18 +38,19 @@ if(isset($_POST['submit'])) {
     }
 
     if(!array_filter($errors)) {
-        $email = mysql_real_escape_string($conn, $_POST['mail']);
-        $title = mysql_real_escape_string($conn, $_POST['title']);
-        $ingredients = mysql_real_escape_string($conn, $_POST['ingredients']);
+        $email = mysqli_real_escape_string($conn, $_POST['mail']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
         // create SQL
-        $sql = "INSERT INTO pizza(title, email, ingredients) VALUES('$title', '$email', '$ingredients')";
+        $sql = "INSERT INTO pizzas(title, email, ingredients) VALUES('$title', '$email', '$ingredients')";
         // save to db
         if(mysqli_query($conn, $sql)) {
             // success
+            header('location: database.php');
         } else {
             echo 'query error: ' . mysqli_error($conn);
         }
-        header('location: index.php');
+        
     } 
 }
 
