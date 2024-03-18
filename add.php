@@ -38,6 +38,9 @@ if(isset($_POST['submit'])) {
     }
 
     if(!array_filter($errors)) {
+        $email = mysql_real_escape_string($conn, $_POST['mail']);
+        $title = mysql_real_escape_string($conn, $_POST['title']);
+        $ingredients = mysql_real_escape_string($conn, $_POST['ingredients']);
         header('location: index.php');
     } 
 }
