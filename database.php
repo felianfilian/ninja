@@ -1,5 +1,15 @@
 <?php
 
+session_start();
+if(isset($_SESSION['name'])) {
+    echo $_SESSION['name'];
+    unset($_SESSION['name']);
+} else {
+    echo "no session variable";
+}
+
+
+
 include('./config/db_connect.php');
 
 // write query for all
