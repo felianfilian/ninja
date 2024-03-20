@@ -31,6 +31,18 @@ if(isset($_GET['id'])) {
     
     <h2>Details</h2>
 
+    <div class="container center">
+        <?php if($pizza): ?>
+            <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
+            <p>Created by: <?php echo htmlspecialchars($pizza['email']); ?></p>
+            <p><?php echo date($pizza['created_at']) ?></p>
+            <h5>Ingredients: <?php  ?></h5>
+            <p><?php echo htmlspecialchars($pizza['ingredients']) ?></p>
+        <?php else: ?>
+
+        <?php endif; ?>
+    </div>
+
     <?php include('templates/footer.php');  ?>
 </body>
 </html>
