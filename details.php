@@ -10,7 +10,15 @@ if(isset($_GET['id'])) {
     $sql = "SELECT * FROM pizzas WHERE id = $id";
 
     // get query result
-    
+    $result = mysqli_query($conn, $sql);
+
+    // fetch result in array format
+    $pizza = mysqli_fetch_assoc($result);
+
+    mysqli_free_result($result);
+    mysqli_close($conn);
+
+    print_r($pizza);
 }
 
 ?>
