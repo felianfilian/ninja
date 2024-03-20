@@ -1,9 +1,10 @@
 <?php 
 
-//ternary operator
-$score = 50;
-
-echo $score > 40 ? "highscore" : "low score";
+if(isset($_POST['submit'])) {
+    session_start();
+    $_SESSION['name'] = $_POST['name'];
+    echo $_SESSION['name'];
+}
 
 ?>
 
@@ -15,6 +16,10 @@ echo $score > 40 ? "highscore" : "low score";
     <title>PHP Sandbox</title>
 </head>
 <body>
-    
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+        <input type="text" name="name">
+        <input type="submit" name="submit" value="submit">
+    </form>
+</form>
 </body>
 </html>
