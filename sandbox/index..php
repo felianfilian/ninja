@@ -18,6 +18,10 @@ if(isset($_POST['submit'])) {
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
         <input type="text" name="name">
+        <select name="type">
+            <option value="human">human</option>
+            <option value="animal">animal</option>
+        </select>
         <input type="submit" name="submit" value="submit">
     </form>
 </form>
