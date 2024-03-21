@@ -1,7 +1,16 @@
 <?php 
 
+$file = 'readme.txt';
+
 //filesystem
-$quotes = readfile('readme.txt');
-echo $quotes;
+if(file_exists($file)) {
+    $quotes = readfile($file);
+    echo $quotes;
+} else {
+    echo "file not exist";
+}
+
+
+
 
 ?>
