@@ -3,7 +3,10 @@
 // filesystem test 02
 $file = 'readme.txt';
 $handle = fopen($file, 'r');
-echo fread($handle, filesize($file));
+//echo fread($handle, filesize($file));
+
+echo fgets($handle);
+echo fgets($handle);
 
 //filesystem test 01
 // if(file_exists($file)) {
