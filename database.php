@@ -1,13 +1,16 @@
 <?php
 
+// get cookie
+$type = $_COOKIE["type"] ?? 'Unknown';
+echo htmlspecialchars($type) . "<br/>";
+
 session_start();
 if(isset($_SESSION['name'])) {
-    echo $_SESSION['name'];
+    echo $_SESSION['name'] . "<br/>";
     unset($_SESSION['name']);
 } else {
-    echo "no session variable";
+    echo "no session variable" . "<br/>";
 }
-
 
 
 include('./config/db_connect.php');

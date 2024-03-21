@@ -1,6 +1,7 @@
 <?php 
 
 if(isset($_POST['submit'])) {
+    setcookie('type', $_POST['type'], time() + 86400, "/");
     session_start();
     $_SESSION['name'] = $_POST['name'];
     echo $_SESSION['name'];
