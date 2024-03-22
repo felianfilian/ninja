@@ -10,7 +10,7 @@ class User {
     }
 
     public function login() {
-        echo "user logged in";
+        echo $this->name . " logged in";
     }
 }
 
