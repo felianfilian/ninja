@@ -9,6 +9,9 @@ class User {
     }
 }
 
+$userOne = new User();
+echo $userOne->login();
+
 ?>
 
 <!DOCTYPE html>
