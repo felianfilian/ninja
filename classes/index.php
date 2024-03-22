@@ -4,13 +4,26 @@ class User {
     public $email;
     public $name;
 
+    public function __construct(){
+        $this->email = 'mario@theninja.to';
+        $this->name = 'mario';
+    }
+
     public function login() {
         echo "user logged in";
     }
 }
 
-$userOne = new User();
-echo $userOne->login();
+// $userOne = new User();
+// echo $userOne->login();
+// echo '<br/>';
+// echo $userOne->name;
+
+$userTwo = new User('mario', 'mario@pario');
+echo $userTwo->login();
+echo '<br/>';
+echo $userTwo->name;
+
 
 ?>
 
