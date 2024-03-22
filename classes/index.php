@@ -1,8 +1,12 @@
 <?php 
 
 class User {
-    public $email;
-    public $name;
+    private $email;
+    private $name;
+
+    public function getName() {
+        return $this->name;
+    }
 
     public function __construct($name, $email){
         $this->email = $email;
@@ -20,9 +24,7 @@ class User {
 // echo $userOne->name;
 
 $userTwo = new User('yoshi', 'mario@pario');
-echo $userTwo->login();
-echo '<br/>';
-echo $userTwo->name;
+echo $userTwo->getName()
 
 
 ?>
