@@ -8,6 +8,15 @@ class User {
         return $this->name;
     }
 
+    public function setName($name) {
+        if(is_string($name) && strlen($name) > 1) {
+            $this->name = $name;
+            return "name set to: " . $name;
+        } else {
+            return "not a valid string";
+        }
+    }
+
     public function __construct($name, $email){
         $this->email = $email;
         $this->name = $name;
@@ -24,7 +33,8 @@ class User {
 // echo $userOne->name;
 
 $userTwo = new User('yoshi', 'mario@pario');
-echo $userTwo->getName()
+echo $userTwo->setName('luigi');
+echo $userTwo->getName();
 
 
 ?>
