@@ -4,9 +4,9 @@ class User {
     public $email;
     public $name;
 
-    public function __construct(){
-        $this->email = 'mario@theninja.to';
-        $this->name = 'mario';
+    public function __construct($name, $email){
+        $this->email = $email;
+        $this->name = $name;
     }
 
     public function login() {
@@ -19,7 +19,7 @@ class User {
 // echo '<br/>';
 // echo $userOne->name;
 
-$userTwo = new User('mario', 'mario@pario');
+$userTwo = new User('yoshi', 'mario@pario');
 echo $userTwo->login();
 echo '<br/>';
 echo $userTwo->name;
